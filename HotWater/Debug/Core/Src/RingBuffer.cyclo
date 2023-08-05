@@ -1,0 +1,7 @@
+RingBuffer.c:16:6:ring_buffer_init	1
+RingBuffer.c:26:6:ring_buffer_push	3
+RingBuffer.c:42:6:ring_buffer_pop	3
+RingBuffer.c:58:6:ring_buffer_is_available	2
+RingBuffer.c:70:6:ring_buffer_peek_idx	4
+RingBuffer.c:81:6:ring_buffer_is_full	2
+RingBuffer.c:93:6:ring_buffer_drop_all	1

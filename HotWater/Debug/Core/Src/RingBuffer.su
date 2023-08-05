@@ -1,0 +1,7 @@
+../Core/Src/RingBuffer.c:16:6:ring_buffer_init	16	static
+../Core/Src/RingBuffer.c:26:6:ring_buffer_push	24	static
+../Core/Src/RingBuffer.c:42:6:ring_buffer_pop	24	static
+../Core/Src/RingBuffer.c:58:6:ring_buffer_is_available	16	static
+../Core/Src/RingBuffer.c:70:6:ring_buffer_peek_idx	24	static
+../Core/Src/RingBuffer.c:81:6:ring_buffer_is_full	16	static
+../Core/Src/RingBuffer.c:93:6:ring_buffer_drop_all	16	static

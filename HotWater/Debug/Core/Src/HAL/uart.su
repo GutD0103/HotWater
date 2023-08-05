@@ -1,0 +1,6 @@
+../Core/Src/HAL/uart.c:84:6:UART_init	16	static
+../Core/Src/HAL/uart.c:104:6:UART_send	24	static
+../Core/Src/HAL/uart.c:107:6:UART_receive_available	16	static
+../Core/Src/HAL/uart.c:111:9:UART_receive_data	32	static
+../Core/Src/HAL/uart.c:117:6:UART_clear_buffer	16	static
+../Core/Src/HAL/uart.c:121:6:HAL_UART_RxCpltCallback	16	static

@@ -1,0 +1,3 @@
+fsm.c:25:6:get_command	25
+fsm.c:165:6:fsm_uart	12
+fsm.c:205:6:fsm_run	1
