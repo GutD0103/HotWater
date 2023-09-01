@@ -24,8 +24,8 @@ water_out.c:328:13:FLOW_not_flowing	8
 water_out.c:344:13:FLOW_leaking	8
 water_out.c:360:13:WATER_LEVEL_init	2
 water_out.c:365:13:WATER_LEVEL_normal	4
-water_out.c:375:13:WATER_LEVEL_empty	5
-water_out.c:392:13:WATER_LEVEL_overflow	1
-water_out.c:395:13:WATER_LEVEL_error	4
-water_out.c:406:13:WATER_OUT_open	2
-water_out.c:413:13:WATER_OUT_close	6
+water_out.c:376:13:WATER_LEVEL_empty	5
+water_out.c:394:13:WATER_LEVEL_overflow	1
+water_out.c:397:13:WATER_LEVEL_error	4
+water_out.c:409:13:WATER_OUT_open	2
+water_out.c:416:13:WATER_OUT_close	6

@@ -14,9 +14,9 @@
 
 #define CHECK_FLOWING_DURATION 				1000
 #define CHECK_TEMP_DURATION 				500
-#define CHECK_WATER_LEVEL_DURATION 			1000
+#define CHECK_WATER_LEVEL_DURATION 			501
 
-#define MAX_COUNTS           7
+#define MAX_COUNTS           100
 enum {
 	SYSTEM0,
 	SYSTEM1,
@@ -123,7 +123,7 @@ void SYSTEM_check(){
 	for(uint8_t i = 0; i <  MAX_SYSTEM ; i++){
 		TEMP_check(i);
 		FLOW_check(i);
-		//WATER_LEVEL_check(i);
+		WATER_LEVEL_check(i);
 	}
 }
 void SYSTEM_run(){
@@ -218,7 +218,7 @@ static void TEMP_init(uint8_t id){
 }
 static void TEMP_hot(uint8_t id){
 	if(timeout_temp[id]){
-		UART_send(UART_3, "HOT\n", sizeof("HOT\n"));
+		UART_send(UART_3, "TEMP: HOT\n", sizeof("TEMP: HOT\n"));
 		timeout_temp[id] = false;
 		if (waterout[id].temp() > 100) {
 			temp_state[id] = TEMP_TOO_HOT;
@@ -235,7 +235,7 @@ static void TEMP_hot(uint8_t id){
 }
 static void TEMP_too_hot(uint8_t id){
 	if(timeout_temp[id]){
-		UART_send(UART_3, "TOO HOT\n", sizeof("TOO HOT\n"));
+		UART_send(UART_3, "TEMP: TOO HOT\n", sizeof("TEMP: TOO HOT\n"));
 		timeout_temp[id] = false;
 		if(waterout[id].temp() < 95) {
 			temp_state[id] = TEMP_HOT;
@@ -259,7 +259,7 @@ static void TEMP_cool(uint8_t id){
 		waterout[id].set_relay(DEVICE_OPEN);
 	}
 	if(timeout_temp[id]){
-		UART_send(UART_3, "COOL\n", sizeof("COOL\n"));
+		UART_send(UART_3, "TEMP: COOL\n", sizeof("TEMP: COOL\n"));
 		timeout_temp[id] = false;
 		if(waterout[id].temp() > 50){
 			temp_state[id] = TEMP_NOT_HOT_ENOUGH;
@@ -283,7 +283,7 @@ static void TEMP_not_hot_enough(uint8_t id){
 		waterout[id].set_relay(DEVICE_OPEN);
 	}
 	if(timeout_temp[id]){
-		UART_send(UART_3, "NOT HOT\n", sizeof("NOT HOT\n"));
+		UART_send(UART_3, "TEMP: NOT HOT\n", sizeof("TEMP: NOT HOT\n"));
 		timeout_temp[id] = false;
 		if(waterout[id].temp() > 90){
 			temp_state[id] = TEMP_HOT;
@@ -298,7 +298,7 @@ static void TEMP_not_hot_enough(uint8_t id){
 static void TEMP_error(uint8_t id){
 
 	if(timeout_temp[id]){
-		UART_send(UART_3, "ER\n", sizeof("ER\n"));
+		UART_send(UART_3, "TEMP: ER\n", sizeof("TEMP: ER\n"));
 		timeout_temp[id] = false;
 		UART_send(UART_3, MSG_temp[id], sizeof(MSG_temp[id]));
 		if(waterout[id].temp() > 65 && waterout[id].temp() < 80){
@@ -364,6 +364,7 @@ static void WATER_LEVEL_init(uint8_t id){
 }
 static void WATER_LEVEL_normal(uint8_t id){
 	if(timeout_water_level[id]){
+		UART_send(UART_3, "WT: NM\n", sizeof("WT: NM\n"));
 		timeout_water_level[id] = false;
 		if (waterout[id].water_level_0() == GPIO_PIN_RESET && waterout[id].water_level_1() == GPIO_PIN_RESET) {
 			water_state[id] = WATER_EMPTY;
@@ -374,6 +375,7 @@ static void WATER_LEVEL_normal(uint8_t id){
 }
 static void WATER_LEVEL_empty(uint8_t id){
 	if(timeout_water_level[id]){
+		UART_send(UART_3, "WT: EMPTY\n", sizeof("WT: EMPTY\n"));
 		timeout_water_level[id] = false;
 		if(waterout[id].water_level_0() == GPIO_PIN_SET && waterout[id].water_level_1() == GPIO_PIN_SET) {
 			water_state[id] = WATER_NORMAL;
@@ -396,6 +398,7 @@ static void WATER_LEVEL_error(uint8_t id){
 	if(timeout_water_level[id]){
 		timeout_water_level[id] = false;
 		UART_send(UART_3, MSG_water[id], sizeof(MSG_water[id]));
+		UART_send(UART_3, "WT: ER\n", sizeof("WT: ER\n"));
 		if(waterout[id].water_level_0() == GPIO_PIN_SET && waterout[id].water_level_1() == GPIO_PIN_SET) {
 			water_state[id] = WATER_NORMAL;
 			waterout[id].set_solenoid_in(DEVICE_CLOSE);

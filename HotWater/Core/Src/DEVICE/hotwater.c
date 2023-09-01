@@ -8,8 +8,18 @@
 
 #include "DEVICE/hotwater.h"
 
+GPIO_PinState wt_lv0 = 0;
+GPIO_PinState wt_lv1 = 0;
+void set_wt(bool value, int lv){
+	if(lv == 0){
+		wt_lv0 = value;
+	}else{
+		wt_lv1 = value;
+	}
+}
 static GPIO_PinState water_0_level_0() {
-	GPIO_PinState state = WATER0_LEVEL0_STATE;
+//	GPIO_PinState state = WATER0_LEVEL0_STATE;
+	GPIO_PinState state = wt_lv0;
 	if(state == WT_LV_FULL){
 		WT_EMPTY_OFF(0);
 	}else if(state == WT_LV_EMPTY){
@@ -17,9 +27,10 @@ static GPIO_PinState water_0_level_0() {
 	}
 	return state;
 }
-static GPIO_PinState water_0_level_1() {return WATER0_LEVEL1_STATE;}
+static GPIO_PinState water_0_level_1() {/*return WATER0_LEVEL1_STATE;*/return wt_lv1;}
 static GPIO_PinState water_1_level_0() {
-	GPIO_PinState state = WATER1_LEVEL0_STATE;
+//	GPIO_PinState state = WATER1_LEVEL0_STATE;
+	GPIO_PinState state = wt_lv0;
 	if(state == WT_LV_FULL){
 		WT_EMPTY_OFF(1);
 	}else if(state == WT_LV_EMPTY){
@@ -27,7 +38,7 @@ static GPIO_PinState water_1_level_0() {
 	}
 	return state;
 }
-static GPIO_PinState water_1_level_1() {return WATER1_LEVEL1_STATE;}
+static GPIO_PinState water_1_level_1() {/*return WATER1_LEVEL1_STATE;*/return wt_lv1;}
 static float GetTemp0(){return TEMP_get_temp(0);}
 static float GetTemp1(){return TEMP_get_temp(1);}
 static bool GetFlow0(){return FLOW_is_flowing(0);}

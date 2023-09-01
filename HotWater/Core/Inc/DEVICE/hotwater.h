@@ -48,4 +48,8 @@ typedef struct{
 extern WaterOut waterout[2];
 
 
+// TESTING
+
+void set_wt(bool value, int lv);
+
 #endif /* INC_DEVICE_HOTWATER_H_ */

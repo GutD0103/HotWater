@@ -207,6 +207,21 @@ void get_command()
 							sprintf(STRING5,"%s %d - %d %s","WATER LEVEL 1: ", waterout[1].water_level_0()
 									,waterout[1].water_level_1()," \n");
 						}
+						else if(buffer[2] == 'S'){
+							if(buffer[3] == '0'){ // chon system 0
+								if(buffer[4] == '0'){
+									set_wt(0, 0);
+								}else{
+									set_wt(1, 0);
+								}
+							}else if(buffer[3] == '1'){
+								if(buffer[4] == '0'){
+									set_wt(0, 1);
+								}else{
+									set_wt(1, 1);
+								}
+							}
+						}
 						state2 = 5;
 						setTimer(0, 100);
 					}
