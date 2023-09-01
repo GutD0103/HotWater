@@ -57,18 +57,38 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define FLOW2_Pin GPIO_PIN_13
-#define FLOW2_GPIO_Port GPIOB
-#define FLOW1_Pin GPIO_PIN_14
-#define FLOW1_GPIO_Port GPIOB
-#define RELAY2_Pin GPIO_PIN_15
-#define RELAY2_GPIO_Port GPIOB
+#define FLOW0_Pin GPIO_PIN_2
+#define FLOW0_GPIO_Port GPIOA
+#define FLOW1_Pin GPIO_PIN_4
+#define FLOW1_GPIO_Port GPIOC
+#define SOLENOID_IN1_Pin GPIO_PIN_11
+#define SOLENOID_IN1_GPIO_Port GPIOB
+#define BOILING0_Pin GPIO_PIN_13
+#define BOILING0_GPIO_Port GPIOB
+#define BOILING1_Pin GPIO_PIN_15
+#define BOILING1_GPIO_Port GPIOB
 #define RELAY1_Pin GPIO_PIN_8
 #define RELAY1_GPIO_Port GPIOA
-#define SOLENOID2_Pin GPIO_PIN_9
-#define SOLENOID2_GPIO_Port GPIOA
-#define SOLENOID1_Pin GPIO_PIN_6
-#define SOLENOID1_GPIO_Port GPIOC
+#define WT0_EMPTY_Pin GPIO_PIN_9
+#define WT0_EMPTY_GPIO_Port GPIOA
+#define RELAY0_Pin GPIO_PIN_6
+#define RELAY0_GPIO_Port GPIOC
+#define WT1_EMPTY_Pin GPIO_PIN_7
+#define WT1_EMPTY_GPIO_Port GPIOC
+#define SOLENOID_OUT1_Pin GPIO_PIN_11
+#define SOLENOID_OUT1_GPIO_Port GPIOA
+#define SOLENOID_IN0_Pin GPIO_PIN_15
+#define SOLENOID_IN0_GPIO_Port GPIOA
+#define SOLENOID_OUT0_Pin GPIO_PIN_9
+#define SOLENOID_OUT0_GPIO_Port GPIOC
+#define WATER0_LEVEL0_Pin GPIO_PIN_3
+#define WATER0_LEVEL0_GPIO_Port GPIOB
+#define WATER0_LEVEL1_Pin GPIO_PIN_4
+#define WATER0_LEVEL1_GPIO_Port GPIOB
+#define WATER1_LEVEL0_Pin GPIO_PIN_5
+#define WATER1_LEVEL0_GPIO_Port GPIOB
+#define WATER1_LEVEL1_Pin GPIO_PIN_6
+#define WATER1_LEVEL1_GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 

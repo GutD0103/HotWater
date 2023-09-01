@@ -14,26 +14,16 @@
 #include "DEVICE/flow_meter.h"
 #include "DEVICE/water_level.h"
 
-#define RELAY1_ON   			HAL_GPIO_WritePin(RELAY1_GPIO_Port, RELAY1_Pin, GPIO_PIN_SET)
-#define RELAY1_OFF  			HAL_GPIO_WritePin(RELAY1_GPIO_Port, RELAY1_Pin, GPIO_PIN_RESET)
-#define RELAY1_STATE 			HAL_GPIO_ReadPin(RELAY1_GPIO_Port, RELAY1_Pin)
+#define DEVICE_OPEN  	GPIO_PIN_RESET
+#define DEVICE_CLOSE  	GPIO_PIN_SET
 
-#define RELAY2_ON   			HAL_GPIO_WritePin(RELAY2_GPIO_Port, RELAY2_Pin, GPIO_PIN_SET)
-#define RELAY2_OFF  			HAL_GPIO_WritePin(RELAY2_GPIO_Port, RELAY2_Pin, GPIO_PIN_RESET)
-#define RELAY2_STATE 			HAL_GPIO_ReadPin(RELAY2_GPIO_Port, RELAY2_Pin)
+#define WT_LV_EMPTY    GPIO_PIN_RESET
+#define WT_LV_FULL	   GPIO_PIN_SET
 
-#define SOLENOID1_OPEN   		HAL_GPIO_WritePin(SOLENOID1_GPIO_Port, SOLENOID1_Pin, GPIO_PIN_SET)
-#define SOLENOID1_CLOSE   		HAL_GPIO_WritePin(SOLENOID1_GPIO_Port, SOLENOID1_Pin, GPIO_PIN_RESET)
-#define SOLENOID1_STATE 		HAL_GPIO_ReadPin(SOLENOID1_GPIO_Port, SOLENOID1_Pin)
-
-#define SOLENOID2_OPEN   		HAL_GPIO_WritePin(SOLENOID2_GPIO_Port, SOLENOID2_Pin, GPIO_PIN_SET)
-#define SOLENOID2_CLOSE   		HAL_GPIO_WritePin(SOLENOID2_GPIO_Port, SOLENOID2_Pin, GPIO_PIN_RESET)
-#define SOLENOID2_STATE 		HAL_GPIO_ReadPin(SOLENOID2_GPIO_Port, SOLENOID2_Pin)
-
-
-typedef float (* get_temp_ptr)(uint8_t);
-typedef float (* get_water_level_ptr)(uint8_t);
-typedef float (* get_flow_ptr)(uint8_t);
+typedef float (* GetTemp)(void);
+typedef bool (* GetFlow)(void);
+typedef GPIO_PinState (*GPIO_ReadPinFunction)(void);
+typedef void (*GPIO_WritePinFunction)(GPIO_PinState);
 
 typedef struct{
 	float temp;
@@ -44,11 +34,18 @@ typedef struct{
 }water_out1;
 
 typedef struct{
-	get_temp_ptr temp;
-	get_water_level_ptr water_level;
-	get_flow_ptr flow;
-	uint8_t solenoid;
-	uint8_t relay;
-}water_out2;
+	GetTemp temp;
+	GetFlow flow;
+	GPIO_ReadPinFunction get_solenoid_out;
+	GPIO_ReadPinFunction get_relay;
+	GPIO_ReadPinFunction water_level_0;
+	GPIO_ReadPinFunction water_level_1;
+	GPIO_WritePinFunction set_solenoid_out;
+	GPIO_WritePinFunction set_solenoid_in;
+	GPIO_WritePinFunction set_relay;
+
+}WaterOut;
+extern WaterOut waterout[2];
+
 
 #endif /* INC_DEVICE_HOTWATER_H_ */

@@ -6,7 +6,11 @@
  */
 #include "DEVICE/water_level.h"
 
-float get_water_level(uint8_t id)
+bool level0[2] = {0};
+bool level1[2] = {0};
+
+
+float WATER_get_water_level(uint8_t id)
 {
 	if(id < 0 || id > 2) return -1;
 

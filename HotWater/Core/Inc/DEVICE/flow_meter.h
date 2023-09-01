@@ -10,7 +10,11 @@
 
 #include <stdint.h>
 #include <HAL/adc.h>
+#include "port.h"
 
-float get_flow_meter(uint8_t id);
-
+void FLOW_get_pulse();
+void FLOW_set_liter(uint8_t id, uint64_t milliliter);
+bool FLOW_is_enough_water(uint8_t id);
+bool FLOW_is_flowing(uint8_t id);
+int fn_pulse(uint8_t id);
 #endif /* INC_DEVICE_FLOW_METER_H_ */

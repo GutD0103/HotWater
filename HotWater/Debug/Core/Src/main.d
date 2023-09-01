@@ -37,9 +37,11 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Inc/HAL/uart.h ../Core/Inc/RingBuffer.h ../Core/Inc/HAL/timer.h \
  ../Core/Inc/scheduler.h ../Core/Inc/HAL/adc.h ../Core/Inc/HAL/gpio.h \
  ../Core/Inc/DEVICE/hotwater.h ../Core/Inc/DEVICE/ntc.h \
- ../Core/Inc/DEVICE/flow_meter.h ../Core/Inc/DEVICE/water_level.h \
- ../Core/Inc/fsm.h ../Core/Inc/HAL/uart.h ../Core/Inc/HAL/timer.h \
- ../Core/Inc/DEVICE/hotwater.h ../Core/Inc/scheduler.h
+ ../Core/Inc/DEVICE/flow_meter.h ../Core/Inc/DEVICE/port.h \
+ ../Core/Inc/DEVICE/water_level.h ../Core/Inc/APP/water_out.h \
+ ../Core/Inc/DEVICE/port.h ../Core/Inc/fsm.h ../Core/Inc/HAL/uart.h \
+ ../Core/Inc/HAL/timer.h ../Core/Inc/DEVICE/hotwater.h \
+ ../Core/Inc/scheduler.h ../Core/Inc/DEVICE/port.h
 ../Core/Inc/main.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal.h:
 ../Core/Inc/stm32g0xx_hal_conf.h:
@@ -85,9 +87,13 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Inc/DEVICE/hotwater.h:
 ../Core/Inc/DEVICE/ntc.h:
 ../Core/Inc/DEVICE/flow_meter.h:
+../Core/Inc/DEVICE/port.h:
 ../Core/Inc/DEVICE/water_level.h:
+../Core/Inc/APP/water_out.h:
+../Core/Inc/DEVICE/port.h:
 ../Core/Inc/fsm.h:
 ../Core/Inc/HAL/uart.h:
 ../Core/Inc/HAL/timer.h:
 ../Core/Inc/DEVICE/hotwater.h:
 ../Core/Inc/scheduler.h:
+../Core/Inc/DEVICE/port.h:

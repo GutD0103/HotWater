@@ -26,6 +26,7 @@
 #include "HAL/adc.h"
 #include "HAL/gpio.h"
 #include "DEVICE/hotwater.h"
+#include "APP/water_out.h"
 #include "fsm.h"
 /* USER CODE END Includes */
 
@@ -53,6 +54,7 @@
 
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
+
 /* USER CODE BEGIN PFP */
 
 /* USER CODE END PFP */
@@ -82,6 +84,7 @@ int main(void)
   TIM_init();
   ADC_init();
   GPIO_init();
+  SYSTEM_init();
   /* USER CODE END Init */
 
   /* Configure the system clock */
@@ -98,10 +101,13 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
+
   while (1)
   {
-
+	  SYSTEM_check();
+	  SYSTEM_run();
 	  fsm_run();
+
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
@@ -149,6 +155,10 @@ void SystemClock_Config(void)
   }
 }
 
+
+/* USER CODE BEGIN 4 */
+
+/* USER CODE END 4 */
 
 /**
   * @brief  This function is executed in case of error occurrence.

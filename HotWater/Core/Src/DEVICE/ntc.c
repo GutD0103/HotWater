@@ -6,12 +6,19 @@
  */
 #include "DEVICE/ntc.h"
 
-float get_temp(uint8_t id)
-{
-	if(id < 0 || id > 2) return -1;
+static float _temp = 0;
 
-	uint8_t newid = (id == 0) ? 0 : 2;
-	uint32_t temp = Read_ADC(newid);
+float TEMP_get_temp(uint8_t id)
+{
+	if(id < 0 || id > 1) return -1;
+
+//	uint32_t temp = Read_ADC(id);
 	// TO DO
-	return (float)(temp);
+
+//	return (float)(temp);
+	return (float)(_temp);
+}
+
+void set_temp(uint32_t value){
+	_temp = value;
 }

@@ -34,7 +34,9 @@ Core/Src/DEVICE/flow_meter.o: ../Core/Src/DEVICE/flow_meter.c \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h \
  ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h \
- ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h
+ ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h \
+ ../Core/Inc/DEVICE/port.h ../Core/Inc/HAL/uart.h \
+ ../Core/Inc/RingBuffer.h
 ../Core/Inc/DEVICE/flow_meter.h:
 ../Core/Inc/HAL/adc.h:
 ../Core/Inc/main.h:
@@ -73,3 +75,6 @@ Core/Src/DEVICE/flow_meter.o: ../Core/Src/DEVICE/flow_meter.c \
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_tim_ex.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart.h:
 ../Drivers/STM32G0xx_HAL_Driver/Inc/stm32g0xx_hal_uart_ex.h:
+../Core/Inc/DEVICE/port.h:
+../Core/Inc/HAL/uart.h:
+../Core/Inc/RingBuffer.h:

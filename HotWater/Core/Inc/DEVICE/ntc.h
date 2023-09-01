@@ -11,6 +11,7 @@
 #include <stdint.h>
 #include <HAL/adc.h>
 
-float get_temp(uint8_t id);
+float TEMP_get_temp(uint8_t id);
+void set_temp(uint32_t value);
 
 #endif /* INC_DEVICE_NTC_H_ */

@@ -1,2 +1,5 @@
-../Core/Src/DEVICE/flow_meter.c:16:6:get_pulse	16	static
-../Core/Src/DEVICE/flow_meter.c:26:7:get_flow_meter	24	static
+../Core/Src/DEVICE/flow_meter.c:22:6:FLOW_get_pulse	72	static
+../Core/Src/DEVICE/flow_meter.c:42:6:FLOW_is_flowing	16	static
+../Core/Src/DEVICE/flow_meter.c:55:6:FLOW_is_enough_water	16	static
+../Core/Src/DEVICE/flow_meter.c:65:6:FLOW_set_liter	96	static
+../Core/Src/DEVICE/flow_meter.c:77:5:fn_pulse	16	static

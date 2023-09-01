@@ -1,6 +1,8 @@
+"./Core/Src/APP/water_out.o"
 "./Core/Src/DEVICE/flow_meter.o"
 "./Core/Src/DEVICE/hotwater.o"
 "./Core/Src/DEVICE/ntc.o"
+"./Core/Src/DEVICE/port.o"
 "./Core/Src/DEVICE/water_level.o"
 "./Core/Src/HAL/adc.o"
 "./Core/Src/HAL/flash.o"

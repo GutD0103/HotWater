@@ -1,1 +1,2 @@
-../Core/Src/DEVICE/ntc.c:9:7:get_temp	24	static
+../Core/Src/DEVICE/ntc.c:11:7:TEMP_get_temp	16	static
+../Core/Src/DEVICE/ntc.c:22:6:set_temp	16	static

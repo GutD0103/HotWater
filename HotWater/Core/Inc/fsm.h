@@ -12,9 +12,9 @@
 #include "HAL/timer.h"
 #include "DEVICE/hotwater.h"
 #include "scheduler.h"
+#include "DEVICE/port.h"
 
-#define START 			0x21
-#define END   			0x23
+
 #define INIT 			0
 #define GET				1
 

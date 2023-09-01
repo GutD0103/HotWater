@@ -1,6 +1,4 @@
-adc.c:32:6:ADC_init	6
-adc.c:78:6:ADC_Select_CH0	2
-adc.c:89:6:ADC_Select_CH1	2
-adc.c:100:6:ADC_Select_CH2	2
-adc.c:112:6:ADC_Select_CH3	2
-adc.c:124:10:Read_ADC	7
+adc.c:32:6:ADC_init	4
+adc.c:61:6:ADC_Select_CH0	2
+adc.c:72:6:ADC_Select_CH1	2
+adc.c:85:10:Read_ADC	5

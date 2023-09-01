@@ -1,2 +1,5 @@
-flow_meter.c:16:6:get_pulse	4
-flow_meter.c:26:7:get_flow_meter	1
+flow_meter.c:22:6:FLOW_get_pulse	7
+flow_meter.c:42:6:FLOW_is_flowing	5
+flow_meter.c:55:6:FLOW_is_enough_water	3
+flow_meter.c:65:6:FLOW_set_liter	2
+flow_meter.c:77:5:fn_pulse	1

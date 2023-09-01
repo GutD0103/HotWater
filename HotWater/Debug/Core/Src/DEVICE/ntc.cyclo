@@ -1,1 +1,2 @@
-ntc.c:9:7:get_temp	3
+ntc.c:11:7:TEMP_get_temp	2
+ntc.c:22:6:set_temp	1
